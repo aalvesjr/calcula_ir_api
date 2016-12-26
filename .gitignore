@@ -1,0 +1,5 @@
+# Ignorando arquivo compilado 
+calcula_ir*
+
+# Ignorando pasta de vendor
+vendor
