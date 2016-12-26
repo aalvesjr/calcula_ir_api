@@ -1,0 +1,6 @@
+package: github.com/aalvesjr/calcula_ir_api
+import:
+- package: github.com/aalvesjr/salario
+- package: github.com/gorilla/mux
+  version: v1.1
+- package: github.com/spf13/viper
