@@ -20,9 +20,10 @@ func main() {
 	bufferPort.WriteString(viper.GetString(port))
 
 	r := mux.NewRouter().StrictSlash(false)
-	r.HandleFunc("/api/calcula-ir", handlers.CalculaIRQuery).Methods("GET")
-	r.HandleFunc("/api/salario/{salario}", handlers.CalculaIRVars).Methods("GET")
-	r.HandleFunc("/api/salario/{salario}/descontos/{descontos}", handlers.CalculaIRVars).Methods("GET")
+	r.HandleFunc("/api/calcula-ir", handlers.CalculateIRQuery).Methods("GET")
+	r.HandleFunc("/api/salario/{salario}", handlers.CalculateIRVars).Methods("GET")
+	r.HandleFunc("/api/salario/{salario}/descontos/{descontos}", handlers.CalculateIRVars).Methods("GET")
+	r.HandleFunc("/api/descontos/{descontos}", handlers.CalculateIRVars).Methods("GET")
 
 	server := &http.Server{
 		Addr:    bufferPort.String(),

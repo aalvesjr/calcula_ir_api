@@ -2,16 +2,16 @@ package handlers
 
 import (
 	"encoding/json"
-	"github.com/aalvesjr/salario"
+	"github.com/aalvesjr/salary"
 	"net/http"
 	"strconv"
 )
 
-func CalculaIRQuery(w http.ResponseWriter, r *http.Request) {
+func CalculateIRQuery(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	sal, des := getQuery(r)
 
-	s := salario.NewSalario(sal, des)
+	s := salary.NewSalary(sal, des)
 	j, _ := json.Marshal(s)
 
 	w.WriteHeader(http.StatusOK)

@@ -30,7 +30,9 @@ export PORT=3000
 endpoints disponiveis para api:
 
 ```
-curl -X GET -H "Content-Type: application/json" "http://localhost:3000/api/calcula-ir/salario/5138.79/descontos/243.12"
+curl -X GET -H "Content-Type: application/json" "http://localhost:3000/api/calcula-ir?salario=5138.79"
+curl -X GET -H "Content-Type: application/json" "http://localhost:3000/api/calcula-ir?salario=5138.79&descontos=243.12"
 curl -X GET -H "Content-Type: application/json" "http://localhost:3000/api/salario/5138.95"
 curl -X GET -H "Content-Type: application/json" "http://localhost:3000/api/salario/5138.95/descontos/243.12"
+curl -X GET -H "Content-Type: application/json" "http://localhost:3000/api/descontos/243.12"
 ```
