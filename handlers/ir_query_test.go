@@ -15,15 +15,15 @@ var queryTests = []struct {
 	value    float32
 	discount float32
 }{
-	{"/api/calcula-ir", 0, 0},
-	{"/api/calcula-ir?salario=1000", 1000, 0},
-	{"/api/calcula-ir?salario=1000&descontos=100", 1000, 100},
-	{"/api/calcula-ir?descontos=100", 0, 100},
+	{"/api/calculate-ir", 0, 0},
+	{"/api/calculate-ir?salary=1000", 1000, 0},
+	{"/api/calculate-ir?salary=1000&discounts=100", 1000, 100},
+	{"/api/calculate-ir?discounts=100", 0, 100},
 }
 
 func TestCalculateIRQuery(t *testing.T) {
 	r := mux.NewRouter()
-	r.HandleFunc("/api/calcula-ir", CalculateIRQuery).Methods("GET")
+	r.HandleFunc("/api/calculate-ir", CalculateIRQuery).Methods("GET")
 
 	for _, q := range queryTests {
 		req, err := http.NewRequest("GET", q.url, nil)

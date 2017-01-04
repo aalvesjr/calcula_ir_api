@@ -9,27 +9,27 @@ import (
 
 func CalculateIRQuery(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	sal, des := getQuery(r)
+	sal, dis := getQuery(r)
 
-	s := salary.NewSalary(sal, des)
+	s := salary.NewSalary(sal, dis)
 	j, _ := json.Marshal(s)
 
 	w.WriteHeader(http.StatusOK)
 	w.Write(j)
 }
 
-func getQuery(r *http.Request) (salario, descontos float32) {
+func getQuery(r *http.Request) (salary, discounts float32) {
 	query := r.URL.Query()
 
-	querySalario, ok := query["salario"]
+	querySalary, ok := query["salary"]
 	if ok {
-		temp, _ := strconv.ParseFloat(querySalario[0], 32)
-		salario = float32(temp)
+		temp, _ := strconv.ParseFloat(querySalary[0], 32)
+		salary = float32(temp)
 	}
-	queryDescontos, ok := query["descontos"]
+	queryDiscounts, ok := query["discounts"]
 	if ok {
-		temp, _ := strconv.ParseFloat(queryDescontos[0], 32)
-		descontos = float32(temp)
+		temp, _ := strconv.ParseFloat(queryDiscounts[0], 32)
+		discounts = float32(temp)
 	}
 	return
 }
