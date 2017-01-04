@@ -1,10 +1,10 @@
-hash: 29471e20f93a168dbe493a7f83002a23d06c935d00a8168ee529968eff55041a
-updated: 2016-12-26T23:49:32.271256271-02:00
+hash: 67ff6d4ce7a7f686713bf381eabb67f12d74d63fe560d4d28035a32f012c5268
+updated: 2017-01-04T00:06:39.220600535-02:00
 imports:
-- name: github.com/aalvesjr/salario
-  version: 589059f894e1eb713bae04463fed6a0c84bfff8b
+- name: github.com/aalvesjr/salary
+  version: b3853ab55942347482709d0debe772a58aa029d5
   subpackages:
-  - impostos
+  - taxes
 - name: github.com/fsnotify/fsnotify
   version: fd9ec7deca8bf46ecd2a795baaacf2b3a9be1197
 - name: github.com/gorilla/context
