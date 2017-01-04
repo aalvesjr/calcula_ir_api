@@ -1,4 +1,5 @@
 # API para Calculo do Imposto de Renda (IR)
+[![CircleCI](https://circleci.com/gh/aalvesjr/calcula_ir_api.svg?style=svg)](https://circleci.com/gh/aalvesjr/calcula_ir_api)
 
 Url disponível para testar: [calcula-ir](https://calcula-ir.herokuapp.com/api/calcula-ir?salario=5122.32&descontos=156.72)
 
