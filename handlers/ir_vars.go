@@ -10,27 +10,27 @@ import (
 
 func CalculateIRVars(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	sal, des := getVars(r)
+	sal, dis := getVars(r)
 
-	s := salary.NewSalary(sal, des)
+	s := salary.NewSalary(sal, dis)
 	j, _ := json.Marshal(s)
 
 	w.WriteHeader(http.StatusOK)
 	w.Write(j)
 }
 
-func getVars(r *http.Request) (salario, descontos float32) {
+func getVars(r *http.Request) (salary, discounts float32) {
 	vars := mux.Vars(r)
 
-	querySalario, ok := vars["salario"]
+	querySalary, ok := vars["salary"]
 	if ok {
-		temp, _ := strconv.ParseFloat(querySalario, 32)
-		salario = float32(temp)
+		temp, _ := strconv.ParseFloat(querySalary, 32)
+		salary = float32(temp)
 	}
-	queryDescontos, ok := vars["descontos"]
+	queryDiscounts, ok := vars["discounts"]
 	if ok {
-		temp, _ := strconv.ParseFloat(queryDescontos, 32)
-		descontos = float32(temp)
+		temp, _ := strconv.ParseFloat(queryDiscounts, 32)
+		discounts = float32(temp)
 	}
 	return
 }

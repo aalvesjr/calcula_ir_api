@@ -15,17 +15,17 @@ var varsTests = []struct {
 	value    float32
 	discount float32
 }{
-	{"/api/salario/0", 0, 0},
-	{"/api/salario/1000", 1000, 0},
-	{"/api/salario/1000/descontos/100", 1000, 100},
-	{"/api/descontos/100", 0, 100},
+	{"/api/salary/0", 0, 0},
+	{"/api/salary/1000", 1000, 0},
+	{"/api/salary/1000/discounts/100", 1000, 100},
+	{"/api/discounts/100", 0, 100},
 }
 
 func TestCalculateIRVars(t *testing.T) {
 	r := mux.NewRouter()
-	r.HandleFunc("/api/salario/{salario}", CalculateIRVars).Methods("GET")
-	r.HandleFunc("/api/salario/{salario}/descontos/{descontos}", CalculateIRVars).Methods("GET")
-	r.HandleFunc("/api/descontos/{descontos}", CalculateIRVars).Methods("GET")
+	r.HandleFunc("/api/salary/{salary}", CalculateIRVars).Methods("GET")
+	r.HandleFunc("/api/salary/{salary}/discounts/{discounts}", CalculateIRVars).Methods("GET")
+	r.HandleFunc("/api/discounts/{discounts}", CalculateIRVars).Methods("GET")
 
 	for _, q := range varsTests {
 		req, err := http.NewRequest("GET", q.url, nil)
