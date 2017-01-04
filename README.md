@@ -25,6 +25,14 @@ glide install
 go build
 ```
 
+## Testing
+
+To avoid run test from vendor folder, run locally:
+
+```
+go test -v $(go list ./... | grep -v '/vendor/')
+```
+
 ## Running
 
 ```
