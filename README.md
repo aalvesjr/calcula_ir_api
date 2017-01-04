@@ -1,17 +1,35 @@
 # API to Calculate IR (Imposto de Renda - Brazilian Tax)
 [![CircleCI](https://circleci.com/gh/aalvesjr/calcula_ir_api.svg?style=svg)](https://circleci.com/gh/aalvesjr/calcula_ir_api)
 
-Urls available to see working: 
-[heroku/?salary=5122.32](https://calcula-ir.herokuapp.com/api/calculate-ir?salary=5122.32)
-[heroku/?salary=5122.32&discounts=156.72](https://calcula-ir.herokuapp.com/api/calculate-ir?salary=5122.32&discounts=156.72)
-[heroku/?discounts=156.72](https://calcula-ir.herokuapp.com/api/calculate-ir?discounts=156.72)
-[heroku/salary/5122.32](https://calcula-ir.herokuapp.com/api/salary/5122.32)
-[heroku/salary/5122.32/discounts/156.72](https://calcula-ir.herokuapp.com/api/salary/5122.32/discounts/156.72)
-[heroku/discounts/156.72](https://calcula-ir.herokuapp.com/api/discounts/156.72)
-
 Project to test:
   - [Gorilla Mux](https://github.com/gorilla/mux)
   - [Salary](https://github.com/aalvesjr/salary)
+
+Urls available to see working: 
+
+  - [heroku/?salary=5122.32](https://calcula-ir.herokuapp.com/api/calculate-ir?salary=5122.32)
+  - [heroku/?salary=5122.32&discounts=156.72](https://calcula-ir.herokuapp.com/api/calculate-ir?salary=5122.32&discounts=156.72)
+  - [heroku/?discounts=156.72](https://calcula-ir.herokuapp.com/api/calculate-ir?discounts=156.72)
+  - [heroku/salary/5122.32](https://calcula-ir.herokuapp.com/api/salary/5122.32)
+  - [heroku/salary/5122.32/discounts/156.72](https://calcula-ir.herokuapp.com/api/salary/5122.32/discounts/156.72)
+  - [heroku/discounts/156.72](https://calcula-ir.herokuapp.com/api/discounts/156.72)
+
+the return should be something like this:
+```
+{
+  "Gross":5122.32,
+  "Net":4036.71,
+  "Discounts":132.54,
+  "INSSRate":0.11,
+  "INSSBase":5122.32,
+  "INSS":563.4552,
+  "IRBase":4558.8647,
+  "IRRate":0.225,
+  "IRDiscount":636.13,
+  "IRWithoutDiscount":1025.7445,
+  "IR":389.6145
+}
+```
 
 ## Setup
 
